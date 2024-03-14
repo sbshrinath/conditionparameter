@@ -19,14 +19,14 @@ pipeline {
              stage('Deploy') {
                  steps {
                      script {
-                              if ( env.ENV == 'UAT' ) {
+                              if ( ENV == 'UAT' ) then {
         	sh 'cp target/conditionparameter.war /home/remote/Documents/software/apache-tomcat-9.0.86/webapps'
         	echo "deployment has been done on UAT!"
-                                                      }
-                              elif ( env.ENV == 'DEV' ) {
+                                                       }
+                              else ( ENV == 'DEV' ) then {
     		sh 'cp target/conditionparameter.war /home/remote/Documents/software/apache-tomcat-9.0.86/webapps'
     		echo "deployment has been done on DEV!"
-			                                        }
+			                                 }
                               fi
                              }
                         }
