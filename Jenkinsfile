@@ -23,9 +23,9 @@ pipeline {
         	sh 'cp target/conditionparameter.war /home/remote/Documents/software/apache-tomcat-9.0.86/webapps'
         	echo "deployment has been done on UAT!"
                                                       }
-                              elif ( env.ENVIRONMENT == 'UAT' ) {
-    		sh 'cp target/CICD.war /home/swapnil/Documents/DevOps-Software/apache-tomcat-9.0.79/webapps'
-    		echo "deployment has been done on UAT!"
+                              elif ( env.ENV == 'DEV' ) {
+    		sh 'cp target/conditionparameter.war /home/remote/Documents/software/apache-tomcat-9.0.86/webapps'
+    		echo "deployment has been done on DEV!"
 			                                        }
                               fi
                              }
